@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 5597493aa02287e4e9e34b87b13eceef
   m_currentHash:
     serializedVersion: 2
-    Hash: 873e23c204ef0dd96360990f569d3941
+    Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -108,6 +108,7 @@ MonoBehaviour:
     - Locale-zh-CN
     - Locale-en
     - Locale-ja
+    - Preload
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 36781ece6a6726e488620928d8f31074, type: 2}

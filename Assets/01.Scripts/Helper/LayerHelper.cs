@@ -5,13 +5,6 @@ using UnityEngine;
 
 public static class LayerHelper
 {
-    public const string GroundLayer = "Ground";
-    public const string PlayerLayer = "Player";
-    public const string PlayerRendererLayer = "PlayerRenderer";
-    public const string Wall = "Wall";
-    public const string InteractionLayer = "Interaction";
-    public const string MonsterLayer = "Monster";
-    public const string AStarNode = "AStarNode";
 
     public static int OriginLayerValue(string _LayerName)
     {

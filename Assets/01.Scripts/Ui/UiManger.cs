@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 public enum ColorName
 {
     red,
@@ -14,18 +12,11 @@ public enum ColorName
     purple,
     magenta
 }
-
-public enum SubtitleType
-{
-    Title,
-    Dialogue,
-    SystemMassage
-}
-
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
     private Dictionary<Type, UIBase> ui = new Dictionary<Type, UIBase>();
+    private Dictionary<Type, string> uiPath = new Dictionary<Type, string>();
 
     private void Reset()
     {
@@ -46,16 +37,29 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void Add<T>(UIBase _ui) where T : UIBase
+    public T Add<T>() where T : UIBase
     {
         Type key = typeof(T);
         if (!ui.ContainsKey(key))
         {
-            ui.Add(key, _ui);
+            if (uiPath.TryGetValue(key, out string pathValue))
+            {
+                GameObject loadedUIObj = ResourcesManager.Instance.GetOnLoadedResource<GameObject>(pathValue);
+                GameObject makedUIObj = MonoBehaviour.Instantiate(loadedUIObj);
+                T makedUIBase = makedUIObj.GetComponent<T>();
+                ui.Add(key, makedUIBase);
+                return makedUIBase;
+            }
+            else
+            {
+                LogHelper.Log($"{key.Name} 로드가 안된거 보니 로드를 안한 것 같음 혹은 경로가 이상하거나 어쨋든 문제임");
+                return null;
+            }
         }
         else
         {
             LogHelper.Log($"{key.Name} 이미 추가 된 UI!");
+            return ui[key].GetComponent<T>();
         }
     }
 
@@ -81,9 +85,8 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            LogHelper.Log($"{key.Name}  추가 되지 않은 UI");
+            return Add<T>();
         }
-        return null;
     }
 
     public void Open<T>() where T : UIBase

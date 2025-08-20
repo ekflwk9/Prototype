@@ -14,25 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Localization-Locales
   m_GUID: 9f05dbdcf83688c4cb7a5430f38ef897
-  m_SerializeEntries:
-  - m_GUID: 15818b1944a6a67498549cbdd91609ce
-    m_Address: Chinese (Simplified) (zh-CN)
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 24b040b396ae86243ba94a0f6e714dc6
-    m_Address: Japanese (ja)
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5fe1da680bb2bcb4799087ca97f9e659
-    m_Address: English (en)
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 88688febc6620e845b2f58bb83659ad1, type: 2}
   m_SchemaSet:

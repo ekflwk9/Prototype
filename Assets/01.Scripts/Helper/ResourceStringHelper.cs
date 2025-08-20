@@ -6,6 +6,6 @@
 
     public const string AudioPrefab = "AudioPrefab";
 
-
-
+    //csv
+    public const string StringMap = "StringMap";
 }

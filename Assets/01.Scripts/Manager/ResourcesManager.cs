@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -21,7 +20,6 @@ public class ResourcesManager
             return instance;
         }
     }
-
 
     public async Task LoadResource<T>(string _key) where T : UnityEngine.Object
     {
@@ -72,5 +70,4 @@ public class ResourcesManager
         LogHelper.LogWarrning("없는 에셋을 가져오려고했음");
         return null;
     }
-
 }

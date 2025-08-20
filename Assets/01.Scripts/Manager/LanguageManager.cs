@@ -13,7 +13,7 @@ public static class LanguageManager
     private static Dictionary<int, string[]> talk = new();
     public static Language language { get; private set; }
 
-    public static void Load(string _csvName) //열거형 값으로 수정 필요
+    public static void Load(string _csvName)
     {
         //var file = ResourcesManager.Instance.GetOnLoadedResource<TextAsset>(_csvName);
         var csvFile = Resources.Load<TextAsset>(ResourceStringHelper.StringMap).text.Split('\n'); //열나눔

@@ -77,15 +77,15 @@ public class GlobalVolumeManager : MonoBehaviour
     }
 
     private float GetFilmGrainIntensity() => filmGrain.intensity.value;
-    private void SetFilmGrainIntensity(float x) => filmGrain.intensity.value = x;
+    private void SetFilmGrainIntensity(float _value) => filmGrain.intensity.value = _value;
 
     /// <summary>
-    /// Global Volume의 ChromaticAberration - intensity를 변경
+    /// Global Volume의 Chromatic - intensity를 변경
     /// </summary>
     /// <param name="intensity">변화시킬 intensity의 목표치</param>
     /// <param name="duration">fade하는데 걸리는 시간</param>
     /// <param name="fade">false를 입력하지 않으면 기본적으로 fade처리</param>
-    public void SetChromaticIntensity(float intensity, float duration = 1f, bool fade = true)
+    public void SetChromatic(float intensity, float duration = 1f, bool fade = true)
     {
         if (fade) DOTween.To(GetChromaticValue, SetChromaticValue, intensity, duration);
         else chromaticAberration.intensity.value = intensity;
@@ -110,7 +110,7 @@ public class GlobalVolumeManager : MonoBehaviour
     private void SetVignetteColor(Color _color) => vignette.color.value = _color;
 
     /// <summary>
-    /// Global Volume의 Vignette - Color를 변경
+    /// Global Volume의 Vignette - Intensity를 변경
     /// </summary>
     /// <param name="intensity">변화시킬 intensity의 목표치</param>
     /// <param name="fade">false를 입력하지 않으면 기본적으로 fade처리</param>
@@ -121,5 +121,5 @@ public class GlobalVolumeManager : MonoBehaviour
     }
 
     private float GetVignetteValue() => vignette.intensity.value;
-    private void SetVignetteValue(float x) => vignette.intensity.value = x;
+    private void SetVignetteValue(float _value) => vignette.intensity.value = _value;
 }

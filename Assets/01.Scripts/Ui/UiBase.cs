@@ -1,7 +1,17 @@
 ﻿using UnityEngine;
 
-public abstract class UiBase : MonoBehaviour
+public abstract class UIBase : MonoBehaviour
 {
-    public virtual void On() => this.gameObject.SetActive(true);
-    public virtual void Off() => this.gameObject.SetActive(false);
+    public abstract void Init();
+
+    public virtual void OnUI()
+    {
+        this.gameObject.SetActive(true);
+    }
+
+    public virtual void OffUI()
+    {
+        this.gameObject.SetActive(false);
+    }
+
 }
